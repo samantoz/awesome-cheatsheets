@@ -3,7 +3,7 @@
 ## 1. Build the Docker image
 
 ```console
-docker build -t python-imdb .
+docker build -t python-imdb-image .
 ```
 
 ## 2. Run the Docker image
@@ -11,17 +11,17 @@ docker build -t python-imdb .
 Without user input:
 
 ```console
-docker run python-imdb
+docker run -d  -name python-imdb-container python-imdb-image
 ```
 
 If you want user input (comment out the `break` in [main.py](./main.py)):
 
 ```console
-docker run -t -i python-imdb
+docker run -t -i --name python-imdb-container python-imdb-image
 ```
+-i: interactive, -t: pseudo terminal
 ## 3. Stopping the container and removing the image
 
--i: interactive, -t: pseudo terminal
 ```console
 docker stop python-imdb && docker rm python-imdb
 ```
