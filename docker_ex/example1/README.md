@@ -19,5 +19,9 @@ If you want user input (comment out the `break` in [main.py](./main.py)):
 ```console
 docker run -t -i python-imdb
 ```
+## 3. Stopping the container and removing the image
 
 -i: interactive, -t: pseudo terminal
+```console
+docker stop python-imdb && docker rm python-imdb
+```
